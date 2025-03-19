@@ -6,7 +6,7 @@ export class monitorActor extends ex.Actor {
         super({
             x: x,
             y: y,
-            z: 4,
+            z: 3,
             scale: ex.vec(3.25, 3.25),
         });
     }

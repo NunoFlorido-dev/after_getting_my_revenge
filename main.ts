@@ -1,7 +1,7 @@
 import * as ex from 'excalibur';
-import { mouseActor } from './assets/actors/mouse';
-import { gloveActor } from './assets/actors/glove';
-import { monitorActor } from './assets/actors/monitor';
+import { MouseActor } from './assets/actors/mouse';
+import { GloveActor } from './assets/actors/glove';
+import { MonitorActor } from './assets/actors/monitor';
 import { loader } from './assets/resources';
 
 // Create a game engine with basic settings
@@ -18,10 +18,10 @@ let centerScreenX = game.drawWidth / 2;
 let centerScreenY = game.drawHeight / 2;
 
 
-// Create and add the image actor
-const mouse = new mouseActor(centerScreenX + 350, centerScreenY + 250);
-const glove = new gloveActor();
-const monitor = new monitorActor(centerScreenX, centerScreenY - 100);
+// Create actors
+const mouse = new MouseActor(centerScreenX + 350, centerScreenY + 250);
+const glove = new GloveActor();
+const monitor = new MonitorActor(centerScreenX, centerScreenY - 100);
 
 
 game.add(mouse);

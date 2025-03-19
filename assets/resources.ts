@@ -1,11 +1,16 @@
 import * as ex from 'excalibur';
 
-// Load image
-export const mouseImage = new ex.ImageSource('../public/images/rato.png');
-export const gloveImage = new ex.ImageSource('../public/images/luva_no_rato.png');
-export const monitorImage = new ex.ImageSource('../public/images/monitor.png');
-
+// Load images
+export const Resources = {
+    Mouse: new ex.ImageSource('./public/images/rato.png'),
+    Glove: new ex.ImageSource('./public/images/luva_no_rato.png'),
+    Monitor: new ex.ImageSource('./public/images/monitor.png'),
+  };
+  
 
 
 // Preload assets
-export const loader = new ex.Loader([mouseImage, gloveImage, monitorImage]);
+export const loader = new ex.Loader();
+for (const key in Resources) {
+  loader.addResource((Resources as any)[key]); // Add each resource dynamically
+}

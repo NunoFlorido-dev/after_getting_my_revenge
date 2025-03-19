@@ -5,5 +5,9 @@ import { Resources } from './resources';
 export const Sprites = {
   Mouse: () => new ex.Sprite({ image: Resources.Mouse }),
   Glove: () => new ex.Sprite({ image: Resources.Glove }),
+  GloveActive: () => new ex.Sprite({ image: Resources.GloveActive}),
   Monitor: () => new ex.Sprite({ image: Resources.Monitor }),
+  MonitorOut: () => new ex.Sprite({ image: Resources.MonitorOut }),
+  MonitorIn: () => new ex.Sprite({ image: Resources.MonitorIn }),
+  UIPreview: () => new ex.Sprite({ image: Resources.UIPreview }),
 };

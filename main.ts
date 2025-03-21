@@ -8,7 +8,8 @@ const game = new ex.Engine({
   fixedUpdateFps: 60,
   antialiasing: false,
   displayMode: ex.DisplayMode.FillScreen,
-  suppressPlayButton: true
+  suppressPlayButton: true,
+  backgroundColor: ex.Color.Transparent 
 });
 
 // Register scenes

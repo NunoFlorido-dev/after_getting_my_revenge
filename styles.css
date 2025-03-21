@@ -3,3 +3,8 @@ html, body{
     margin: 0;
     box-sizing: border-box;
 }
+
+canvas{
+    background-image: url("public/images/parede.png");
+    background-size: cover;
+}

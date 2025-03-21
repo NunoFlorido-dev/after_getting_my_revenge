@@ -3,8 +3,8 @@ import * as ex from 'excalibur';
 // Load images
 export const Resources = {
     Mouse: new ex.ImageSource('./public/images/rato.png'),
-    Glove: new ex.ImageSource('./public/images/luva_no_rato.png'),
-    GloveActive: new ex.ImageSource('./public/images/luva_apontar.png'), 
+    Glove: new ex.ImageSource('./public/images/luva_apontar.png'),
+    GloveActive: new ex.ImageSource('./public/images/luva_no_rato.png'), 
     Monitor: new ex.ImageSource('./public/images/monitor.png'),
     MonitorOut: new ex.ImageSource('./public/images/monitor_out.png'),
     MonitorIn: new ex.ImageSource('./public/images/filtro_monitor.png'),

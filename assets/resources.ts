@@ -8,7 +8,8 @@ export const Resources = {
     Monitor: new ex.ImageSource('./public/images/monitor.png'),
     MonitorOut: new ex.ImageSource('./public/images/monitor_out.png'),
     MonitorIn: new ex.ImageSource('./public/images/filtro_monitor.png'),
-    UIPreview: new ex.ImageSource('./public/images/ui_preview.jpeg')
+    UIPreview: new ex.ImageSource('./public/images/ui_preview.jpeg'),
+    Arm: new ex.ImageSource('./public/images/braco.png'),
   };
   
 

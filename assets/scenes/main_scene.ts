@@ -2,6 +2,8 @@ import * as ex from 'excalibur';
 import { MouseActor } from '../actors/mouse';
 import { GloveActor } from '../actors/glove';
 import { MonitorActor } from '../actors/monitor';
+import { ArmActor } from '../actors/arm';
+
 
 export class MainScene extends ex.Scene {
   onInitialize(engine: ex.Engine) {
@@ -11,10 +13,12 @@ export class MainScene extends ex.Scene {
     // Create actors
     const mouse = new MouseActor(centerScreenX + 350, centerScreenY + 250);
     const glove = new GloveActor();
+    const arm = new ArmActor();
     const monitor = new MonitorActor(centerScreenX, centerScreenY - 100);
 
     // Add actors to scene
     this.add(mouse);
+    this.add(arm);
     this.add(glove);
     this.add(monitor);
 
@@ -27,6 +31,7 @@ export class MainScene extends ex.Scene {
       monitor.pos = ex.vec(centerScreenX - (mouseX - centerScreenX) * 0.05, centerScreenY - 100 - (mouseY - centerScreenY) * 0.05); // Far (very slow)
       mouse.pos = ex.vec(centerScreenX + 350 - (mouseX - centerScreenX) * 0.1, centerScreenY + 250 - (mouseY - centerScreenY) * 0.1); // Mid (slower)
       glove.pos = ex.vec(mouseX, mouseY); // Closest (still follows mouse directly)
+      arm.pos = ex.vec(mouseX - 5, mouseY + 750);
     });
   }
 

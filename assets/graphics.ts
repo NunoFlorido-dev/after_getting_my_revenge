@@ -10,4 +10,5 @@ export const Sprites = {
   MonitorOut: () => new ex.Sprite({ image: Resources.MonitorOut }),
   MonitorIn: () => new ex.Sprite({ image: Resources.MonitorIn }),
   UIPreview: () => new ex.Sprite({ image: Resources.UIPreview }),
+  Arm: () => new ex.Sprite({ image: Resources.Arm}),
 };

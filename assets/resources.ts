@@ -10,6 +10,7 @@ export const Resources = {
     MonitorIn: new ex.ImageSource('./public/images/filtro_monitor.png'),
     UIPreview: new ex.ImageSource('./public/images/ui_preview.jpeg'),
     Arm: new ex.ImageSource('./public/images/braco.png'),
+    Keyboard: new ex.ImageSource('./public/images/teclado.png'),
   };
   
 

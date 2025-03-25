@@ -8,7 +8,7 @@ export class GloveActor extends ex.Actor {
 
     constructor() {
         super({
-            z: 6, scale: ex.vec(2, 2), anchor: ex.vec(0.5, 0.5), collider: ex.Shape.Box(32, 32) // Add a box collider
+            z: 6, scale: ex.vec(2.25, 2.25), anchor: ex.vec(0.5, 0.5), collider: ex.Shape.Box(36, 36) // Add a box collider
         });
     }
 
@@ -23,19 +23,30 @@ export class GloveActor extends ex.Actor {
         engine.input.pointers.primary.on('move', (event) => {
             this.pos = event.worldPos; // Update position to match cursor
         });
+
+           // Listen for mouse clicks
+           engine.input.pointers.primary.on('down', () => {
+            if (this.isHoveringMouse) {
+                engine.goToScene('pcscene'); // Transition to the new scene
+            }
+        });
     }
 
     override onCollisionStart(_self: ex.Collider, other: ex.Collider): void {
         if (other.owner instanceof MouseActor) {
             this.graphics.use(Sprites.GloveActive()); // Use preloaded sprite
+            this.isHoveringMouse = true;
         }else{
             this.graphics.use(Sprites.Glove()); 
+            this.isHoveringMouse = false;
+
         }
     }
 
     override onCollisionEnd(_self: ex.Collider, other: ex.Collider): void {
         if (other.owner instanceof MouseActor) {
-            this.graphics.use(Sprites.Glove ()); // Use preloaded sprite
+            this.graphics.use(Sprites.Glove()); // Use preloaded sprite
+            this.isHoveringMouse = false;
     }
 
 }

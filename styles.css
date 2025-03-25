@@ -2,9 +2,26 @@ html, body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-image: url("public/images/parede.png");
+    background-size: cover;
 }
 
 canvas{
-    background-image: url("public/images/parede.png");
-    background-size: cover;
+    z-index: 2;
+    position: absolute;
+}
+
+#desktop{
+    z-index: 1;
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+    width: 900px;
+    height: 600px;
+    background-color: aliceblue;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
 }

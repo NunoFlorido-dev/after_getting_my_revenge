@@ -29,6 +29,7 @@ export class GloveActor extends ex.Actor {
             if (this.isHoveringMouse) {
                 engine.goToScene('pcscene'); // Transition to the new scene
             }
+
         });
     }
 
@@ -38,9 +39,9 @@ export class GloveActor extends ex.Actor {
             this.isHoveringMouse = true;
         }else{
             this.graphics.use(Sprites.Glove()); 
-            this.isHoveringMouse = false;
-
+            this.isHoveringMouse = false
         }
+
     }
 
     override onCollisionEnd(_self: ex.Collider, other: ex.Collider): void {

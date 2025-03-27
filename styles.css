@@ -6,9 +6,23 @@ html, body{
     background-size: cover;
 }
 
+body{
+    overflow: hidden;
+}
+
 canvas{
     z-index: 2;
     position: absolute;
+    pointer-events: none;
+}
+
+#exit_note{
+    image-rendering: pixelated;
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    width: 100px;
+    height: 100px;
 }
 
 #desktop{

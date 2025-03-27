@@ -12,6 +12,7 @@ export const Resources = {
     Arm: new ex.ImageSource('./public/images/braco.png'),
     Keyboard: new ex.ImageSource('./public/images/teclado.png'),
     Desk: new ex.ImageSource('./public/images/mesa.png'),
+    ExitNote: new ex.ImageSource('./public/images/nota_exit.png'),
   };
   
 

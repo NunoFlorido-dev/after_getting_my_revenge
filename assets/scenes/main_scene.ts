@@ -6,6 +6,7 @@ import { ArmActor } from '../actors/arm';
 import { KeyboardActor } from '../actors/keyboard';
 import { MonitorFrameActor } from '../actors/monitor_frame';
 import { UIPreview } from '../actors/ui_preview';
+import { DeskActor } from '../actors/desk';
 
 
 export class MainScene extends ex.Scene {
@@ -15,9 +16,11 @@ export class MainScene extends ex.Scene {
   onInitialize(engine: ex.Engine) {
     let centerScreenX = engine.drawWidth / 2;
     let centerScreenY = engine.drawHeight / 2;
+    
 
     // Create actors
     const mouse = new MouseActor(centerScreenX + 350, centerScreenY + 250);
+    const desk = new DeskActor(centerScreenX, centerScreenY + 60, 6);
     const glove = new GloveActor();
     const arm = new ArmActor();
     const monitorOut = new MonitorActor(centerScreenX, centerScreenY - 100, 3.25);
@@ -25,14 +28,25 @@ export class MainScene extends ex.Scene {
     const monitorFrame = new MonitorFrameActor(centerScreenX, centerScreenY - 100, 3.25);
     const keyboard = new KeyboardActor(centerScreenX, centerScreenY + 250);
 
+    // Set Z-index to control rendering order
+desk.z = 0;  
+ui_preview.z = 1;    // UI elements on top        // Lowest (background)
+monitorOut.z = 2;
+monitorFrame.z = 3;
+keyboard.z = 4;
+mouse.z = 5;         // Above the keyboard
+arm.z = 6; 
+glove.z = 7;         // Above the mouse (follows the cursor)
+
     // Add actors to scene
-    this.add(ui_preview);
+    this.add(desk);          // Background
     this.add(monitorOut);
     this.add(monitorFrame);
-    this.add(mouse);
-    this.add(arm);
     this.add(keyboard);
-    this.add(glove);
+    this.add(mouse);         // Above the keyboard
+    this.add(glove);         // Above the mouse (cursor follows it)
+    this.add(arm);
+    this.add(ui_preview);    // UI should be on top
 
     // Track mouse movement for parallax effect
     engine.input.pointers.primary.on('move', (event) => {
@@ -41,6 +55,7 @@ export class MainScene extends ex.Scene {
 
       // Adjust actors for a slower parallax effect
       monitorOut.pos = ex.vec(centerScreenX - (mouseX - centerScreenX) * 0.05, centerScreenY - 100 - (mouseY - centerScreenY) * 0.05); // Far (very slow)
+      desk.pos = ex.vec(centerScreenX - (mouseX - centerScreenX) * 0.05, centerScreenY + 60 - (mouseY - centerScreenY) * 0.05); // Far (very slow)
       ui_preview.pos = ex.vec(centerScreenX - (mouseX - centerScreenX) * 0.05, centerScreenY - 120 - (mouseY - centerScreenY) * 0.05); // Far (very slow)
       monitorFrame.pos = ex.vec(centerScreenX - (mouseX - centerScreenX) * 0.05, centerScreenY - 100 - (mouseY - centerScreenY) * 0.05); // Far (very slow)
       mouse.pos = ex.vec(centerScreenX + 350 - (mouseX - centerScreenX) * 0.1, centerScreenY + 250 - (mouseY - centerScreenY) * 0.1); // Mid (slower)

@@ -12,4 +12,5 @@ export const Sprites = {
   UIPreview: () => new ex.Sprite({ image: Resources.UIPreview }),
   Arm: () => new ex.Sprite({ image: Resources.Arm }),
   Keyboard: () => new ex.Sprite({ image: Resources.Keyboard }),
+  Desk: () => new ex.Sprite({ image: Resources.Desk}),
 };

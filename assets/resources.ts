@@ -11,6 +11,7 @@ export const Resources = {
     UIPreview: new ex.ImageSource('./public/images/ui_preview.jpeg'),
     Arm: new ex.ImageSource('./public/images/braco.png'),
     Keyboard: new ex.ImageSource('./public/images/teclado.png'),
+    Desk: new ex.ImageSource('./public/images/mesa.png'),
   };
   
 

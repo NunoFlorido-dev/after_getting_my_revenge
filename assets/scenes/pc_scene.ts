@@ -37,7 +37,7 @@ this.add(monitorFrame);
         const canvas = this.engine.canvas;
 
         if (pcUI) {
-            pcUI.style.display = 'flex'; // Show the pcUI
+            pcUI.style.display = 'block'; // Show the pcUI
             canvas.style.pointerEvents = 'none'
           }
 

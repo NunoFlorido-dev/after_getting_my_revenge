@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: "Right Grotesk Mono";
+    src: url("/public/fonts/PPRightGroteskMono-Light.woff");
+}
+
+@font-face {
+    font-family: "Neue Montreal Mono";
+    src: url("/public/fonts/PPNeueMontrealMono-Light.woff");
+}
 
 
 html, body{
@@ -56,12 +64,202 @@ canvas{
 }
 
 #desktop .desktop_navbar p{
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-family: "Neue Montreal Mono", sans-serif;
   margin-top: 1.2rem;
+  font-size: 1rem;
 }
 
 #desktop .desktop_navbar img{
     width: 1.25rem;
     height: auto;
 }
+
+#desktop .desktop_mainwindow{
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    height: 20rem;
+    background-color: white;
+    position: relative;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 0%);
+}
+
+#desktop .desktop_mainwindow .mainwindow_title{
+    background-color: #bfbfbf;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#desktop .desktop_mainwindow .mainwindow_title p{
+    font-family: "Neue Montreal Mono", sans-serif;
+    font-size: 0.8rem;
+}
+
+
+#desktop .desktop_mainwindow .mainwindow_iconarea{
+    background-color: #2858AD;
+    margin: 0.75rem;
+    height: 100%;
+}
+
+#desktop .desktop_mainwindow .mainwindow_iconarea div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 4rem;
+    margin: 0;
+}
+
+
+#desktop .desktop_mainwindow .mainwindow_iconarea img{
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: -webkit-optimize-contrast;
+    width: 3.5rem;
+    height: auto;
+}
+
+#desktop .desktop_mainwindow .mainwindow_iconarea div p{
+    font-family: "Neue Montreal Mono", sans-serif;
+    color: white;
+    background-color: black;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    font-size: 0.6rem;
+}
+
+#desktop .desktop_mainwindow .mainwindow_iconarea .norbot_app{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#desktop .desktop_mainwindow .mainwindow_iconarea .cheese_notes_app{
+    position: relative;
+    top: -25%;
+    left: 85%;
+}
+
+#desktop .desktop_mainwindow .mainwindow_iconarea .norbot_app:hover{
+    cursor: pointer;
+}
+
+#desktop .desktop_mainwindow .mainwindow_iconarea .cheese_notes_app:hover{
+    cursor: pointer;
+}
+
+#desktop .mainwindow_cheesenotes {
+    display: none;
+    background-color: #292929;
+    margin: 0.75rem;
+    height: 100%;
+    grid-template-columns: 1.5fr 3fr;
+    grid-template-rows: 0.25fr 3fr; 
+}
+
+/* NAV CONTAINER */
+#desktop .mainwindow_cheesenotes .cheesenotes_nav {
+    display: grid;
+    background-color: #ffff71 ;
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    grid-template-columns: 1.5fr 3fr; 
+    align-items: center;
+}
+
+/* LEAVE BUTTON SECTION */
+#desktop .mainwindow_cheesenotes .cheesenotes_leavenav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* TITLE SECTION */
+#desktop .mainwindow_cheesenotes .cheesenotes_titlenav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TITLE TEXT */
+#desktop .mainwindow_cheesenotes .cheesenotes_titlenav p {
+    font-family: "Neue Montreal Mono", sans-serif;
+    font-size: 1rem;
+    color: black;
+}
+
+/* LEAVE BUTTON */
+#desktop .mainwindow_cheesenotes .cheesenotes_leave {
+    width: 2rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+#desktop .mainwindow_cheesenotes .cheesenotes_message{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#desktop .mainwindow_cheesenotes .cheesenotes_messagepreview{
+    width: 100%;
+    height: 100%;
+}
+
+
+#desktop .mainwindow_cheesenotes .cheesenotes_messagepreview div{
+border-bottom: 1px solid #ffff71;
+padding-top: 1rem;
+padding-left: 1rem;
+height: 2rem;
+}
+
+#desktop .mainwindow_cheesenotes .cheesenotes_messagepreview div p{
+    color: #ffff71;
+    margin: 0px;
+    font-family: "Neue Montreal Mono", sans-serif;
+    font-size: 0.75rem;
+
+    
+ }
+
+ #desktop .mainwindow_cheesenotes .cheesenotes_message{
+    border-left: 1px solid #ffff71;
+  }
+
+#desktop .mainwindow_cheesenotes .cheesenotes_message div{
+  height: 220px;
+  padding-right: 1rem;
+  overflow-y: auto;
+  padding-left: 1rem;
+}
+
+
+#desktop .mainwindow_cheesenotes .cheesenotes_message div h1{
+    font-family: "Neue Montreal Mono", sans-serif;
+    color: #ffff71;
+
+
+  }
+
+  #desktop .mainwindow_cheesenotes .cheesenotes_message div p{
+    font-family: "Neue Montreal Mono", sans-serif;
+    color: #ffff71;
+    font-size: 0.75rem;
+    line-height: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+#desktop .mainwindow_cheesenotes .cheesenotes_message p{
+    margin: 0;
+  }
+  

@@ -6,13 +6,14 @@ export const Resources = {
     Glove: new ex.ImageSource('./public/images/luva_apontar.png'),
     GloveActive: new ex.ImageSource('./public/images/luva_no_rato.png'), 
     Monitor: new ex.ImageSource('./public/images/monitor.png'),
-    MonitorOut: new ex.ImageSource('./public/images/monitor_out.png'),
+    MonitorOut: new ex.ImageSource('./public/images/monitor.png'),
     MonitorIn: new ex.ImageSource('./public/images/filtro_monitor.png'),
     UIPreview: new ex.ImageSource('./public/images/ui_preview.jpeg'),
     Arm: new ex.ImageSource('./public/images/braco.png'),
     Keyboard: new ex.ImageSource('./public/images/teclado.png'),
     Desk: new ex.ImageSource('./public/images/mesa.png'),
     ExitNote: new ex.ImageSource('./public/images/nota_exit.png'),
+    Mug: new ex.ImageSource('./public/images/caneca_cheio.png'),
   };
   
 

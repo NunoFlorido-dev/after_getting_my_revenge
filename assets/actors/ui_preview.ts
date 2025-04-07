@@ -4,7 +4,7 @@ import { Sprites } from '../graphics';
 export class UIPreview extends ex.Actor {
     constructor(x: number, y: number) {
         super({
-            x, y, z: 3, scale: ex.vec(0.30, 0.30)});
+            x, y, z: 3, scale: ex.vec(0.34, 0.34)});
     }
 
     onInitialize() {

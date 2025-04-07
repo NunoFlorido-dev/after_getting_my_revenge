@@ -14,4 +14,5 @@ export const Sprites = {
   Keyboard: () => new ex.Sprite({ image: Resources.Keyboard }),
   Desk: () => new ex.Sprite({ image: Resources.Desk}),
   ExitNote: () => new ex.Sprite({ image: Resources.ExitNote }),
+  Mug: () => new ex.Sprite({ image: Resources.Mug}),
 };

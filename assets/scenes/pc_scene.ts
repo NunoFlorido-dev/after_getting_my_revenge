@@ -14,15 +14,12 @@ export class PCScene extends ex.Scene {
     
         // Create actors
         const monitorOut = new MonitorActor(centerScreenX, centerScreenY - 30, 5.25);
-        const monitorFrame = new MonitorFrameActor(centerScreenX, centerScreenY - 30, 5.25);
 
         // Set Z-index for proper layering
 monitorOut.z = 1;     // Behind the monitor frame
-monitorFrame.z = 2;   // Above monitorOut
 
 // Add actors in a specific order
 this.add(monitorOut);   
-this.add(monitorFrame);
     
         // Track mouse movement for parallax effect
         engine.input.pointers.primary.on('move', (event) => {

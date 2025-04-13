@@ -382,3 +382,86 @@ cursor: pointer;
 #inventory_rocket{
     grid-column: 2 / span 1;
 }
+
+/* Hide the specific item section by default */
+#tinkerwiki_specificitem {
+    display: none;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    grid-column: 1 / span 3;
+  }
+  
+  /* Hide invention pages by default too */
+  .invention_page {
+    display: none; /* default state */
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    gap: -0.5rem;
+
+    /* ✅ enable grid layout */
+    display: grid;
+    align-items: start;
+}
+
+
+  /* Left column (image + button) */
+  .invention_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+   .invention_left button {
+    background: none;
+    border: none;
+    outline: 1px solid #86f060;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Make the image look nice */
+  .invention_left img {
+    width: 10rem;
+    height: auto;
+  }
+  
+
+  .invention_left h1 {
+    font-family: "Neue Montreal Mono", sans-serif;
+    font-size: 2rem;
+  }
+  
+  /* Right text area */
+  .invention_right {
+    font-family: "Neue Montreal Mono", sans-serif;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .invention_right p{
+    line-height: 1.35rem;
+  }
+  
+  /* Back button styling */
+  .invention_leave {
+  }
+  
+
+  
+  /* Inventory item cards */
+  .inventory_item {
+  
+  }
+  
+  .inventory_item img {
+
+  }
+  

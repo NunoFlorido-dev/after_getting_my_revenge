@@ -94,3 +94,52 @@ document.addEventListener("DOMContentLoaded", () => {
     folder.style.top = `${randomTop}px`;
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const inventoryItems = document.querySelectorAll(".inventory_item");
+  const inventionPages = document.querySelectorAll(".invention_page");
+  const inventionContainerPage = document.querySelector(
+    "#tinkerwiki_specificitem"
+  );
+  const leaveButtons = document.querySelectorAll(".invention_leave");
+
+  function hideAllInventionPages() {
+    // Hide each specific invention page
+    inventionPages.forEach((page) => {
+      page.style.display = "none";
+    });
+    inventoryItems.forEach((item) => {
+      item.style.display = "flex";
+    });
+    // Hide the container
+    inventionContainerPage.style.display = "none";
+  }
+
+  // Handle inventory item clicks dynamically
+  inventoryItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const targetId = item.getAttribute("data-id");
+      const targetPage = document.getElementById(targetId);
+
+      if (targetPage) {
+        hideAllInventionPages(); // hide everything first
+        targetPage.style.display = "grid"; // show only the clicked one
+        inventionContainerPage.style.display = "grid"; // show container
+
+        inventoryItems.forEach((item) => {
+          item.style.display = "none";
+        });
+      }
+    });
+  });
+
+  // Handle back buttons
+  leaveButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      hideAllInventionPages();
+    });
+  });
+
+  // Initial state: hide everything
+  hideAllInventionPages();
+});

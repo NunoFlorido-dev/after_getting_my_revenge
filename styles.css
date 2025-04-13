@@ -297,8 +297,6 @@ cursor: pointer;
 #desktop .mainwindow_cheesenotes .cheesenotes_message div h1{
     font-family: "Neue Montreal Mono", sans-serif;
     color: #ffff71;
-
-
   }
 
   #desktop .mainwindow_cheesenotes .cheesenotes_message div p{
@@ -322,7 +320,65 @@ cursor: pointer;
     align-items: center;
 }
 
+/* LEAVE BUTTON SECTION */
+#desktop .mainwindow_tinkerwiki .tinkerwiki_leavenav {
+    margin-right: 30%;
+    margin-top: 0.25rem;
+}
+
+#desktop .mainwindow_tinkerwiki .tinkerwiki_leavenav:hover {
+    cursor: pointer;
+}
+
+/* LEAVE BUTTON */
+#desktop .mainwindow_tinkerwiki .tinkerwiki_leave {
+    width: 2rem ;
+    height: auto;
+}
+
 #desktop  .mainwindow_tinkerwiki .tinkerwiki_nav p{
     font-family: "Neue Montreal Mono", sans-serif;
     font-size: 1.5rem;
+    margin-right: 35%;
+}
+
+#tinkerwiki_inventory{
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    overflow-y: scroll;
+}
+
+#desktop .mainwindow_tinkerwiki .inventory_item{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+#desktop .mainwindow_tinkerwiki .inventory_item:hover{
+  cursor: pointer;
+}
+
+#desktop .mainwindow_tinkerwiki .inventory_item img{
+    width: 4rem;
+    height: auto;
+}
+
+#desktop .mainwindow_tinkerwiki .inventory_item h1{
+    font-size: 0.85rem;
+    font-family: "Neue Montreal Mono", sans-serif;
+
+}
+
+#inventory_trousers{
+    grid-column: 1 / span 1;
+}
+
+#inventory_rocket{
+    grid-column: 2 / span 1;
 }

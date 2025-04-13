@@ -8,6 +8,8 @@ let cheeseNotesLeaveIcon = document.querySelector(".cheesenotes_leave");
 let tinkerWikiPage = document.querySelector(".mainwindow_tinkerwiki");
 let tinkerWikiIcon = document.querySelector(".tinker_wiki_app");
 
+let tinkerWikiLeaveIcon = document.querySelector(".tinkerwiki_leave");
+
 cheeseNotesIcon.addEventListener("click", () => {
   if (
     cheeseNotesPage.style.display === "none" ||
@@ -36,6 +38,11 @@ tinkerWikiIcon.addEventListener("click", () => {
 
 cheeseNotesLeaveIcon.addEventListener("click", () => {
   cheeseNotesPage.style.display = "none";
+  iconArea.style.display = "block";
+});
+
+tinkerWikiLeaveIcon.addEventListener("click", () => {
+  tinkerWikiPage.style.display = "none";
   iconArea.style.display = "block";
 });
 

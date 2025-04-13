@@ -103,9 +103,10 @@ canvas{
 #desktop .desktop_mainwindow .mainwindow_iconarea{
     background-color: #2858AD;
     margin: 0.75rem;
-    height: 100%;
+    height: 275px;
     position: relative;
 }
+
 
 
 #desktop .desktop_mainwindow .mainwindow_iconarea .green_folder,
@@ -160,11 +161,21 @@ canvas{
     left: 85%;
 }
 
+#desktop .desktop_mainwindow .mainwindow_iconarea .tinker_wiki_app{
+    position: relative;
+    top: -25%;
+    left: 10%;
+}
+
 #desktop .desktop_mainwindow .mainwindow_iconarea .norbot_app:hover{
     cursor: pointer;
 }
 
 #desktop .desktop_mainwindow .mainwindow_iconarea .cheese_notes_app:hover{
+    cursor: pointer;
+}
+
+#desktop .desktop_mainwindow .mainwindow_iconarea .tinker_wiki_app:hover{
     cursor: pointer;
 }
 
@@ -176,6 +187,22 @@ canvas{
     grid-template-columns: 1.5fr 3fr;
     grid-template-rows: 0.25fr 3fr; 
 }
+
+#desktop  .mainwindow_tinkerwiki{
+    display: none;
+    background-color: white;
+    margin: 0.75rem;
+    height: 100%;
+}
+
+#desktop  .mainwindow_crackerbook{
+    display: none;
+    background-color: blue;
+    margin: 0.75rem;
+    height: 100%;
+}
+
+
 
 /* NAV CONTAINER */
 #desktop .mainwindow_cheesenotes .cheesenotes_nav {
@@ -286,3 +313,16 @@ cursor: pointer;
     margin: 0;
   }
   
+#desktop  .mainwindow_tinkerwiki .tinkerwiki_nav{
+    background-color: #86f060;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#desktop  .mainwindow_tinkerwiki .tinkerwiki_nav p{
+    font-family: "Neue Montreal Mono", sans-serif;
+    font-size: 1.5rem;
+}

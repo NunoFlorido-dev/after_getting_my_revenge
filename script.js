@@ -5,6 +5,9 @@ let cheeseNotesIcon = document.querySelector(".cheese_notes_app");
 
 let cheeseNotesLeaveIcon = document.querySelector(".cheesenotes_leave");
 
+let tinkerWikiPage = document.querySelector(".mainwindow_tinkerwiki");
+let tinkerWikiIcon = document.querySelector(".tinker_wiki_app");
+
 cheeseNotesIcon.addEventListener("click", () => {
   if (
     cheeseNotesPage.style.display === "none" ||
@@ -14,6 +17,19 @@ cheeseNotesIcon.addEventListener("click", () => {
     iconArea.style.display = "none";
   } else {
     cheeseNotesPage.style.display = "none";
+    iconArea.style.display = "block";
+  }
+});
+
+tinkerWikiIcon.addEventListener("click", () => {
+  if (
+    tinkerWikiPage.style.display === "none" ||
+    tinkerWikiPage.style.display === ""
+  ) {
+    tinkerWikiPage.style.display = "grid";
+    iconArea.style.display = "none";
+  } else {
+    tinkerWikiPage.style.display = "none";
     iconArea.style.display = "block";
   }
 });

@@ -10,6 +10,28 @@ let tinkerWikiIcon = document.querySelector(".tinker_wiki_app");
 
 let tinkerWikiLeaveIcon = document.querySelector(".tinkerwiki_leave");
 
+let cheeseBookPage = document.querySelector(".mainwindow_cheesebook");
+let cheeseBookIcon = document.querySelector(".cheese_book_app");
+
+let cheeseBookLeaveIcon = document.querySelector(".cheesebook_leave");
+
+// DISPLAY CHEESE BOOK /////
+
+cheeseBookIcon.addEventListener("click", () => {
+  if (
+    cheeseBookPage.style.display === "none" ||
+    cheeseBookIcon.style.display === ""
+  ) {
+    cheeseBookPage.style.display = "grid";
+    iconArea.style.display = "none";
+  } else {
+    cheeseBookPage.style.display = "none";
+    iconArea.style.display = "block";
+  }
+});
+
+// DISPLAY CHEESE NOTES /////
+
 cheeseNotesIcon.addEventListener("click", () => {
   if (
     cheeseNotesPage.style.display === "none" ||
@@ -22,6 +44,8 @@ cheeseNotesIcon.addEventListener("click", () => {
     iconArea.style.display = "block";
   }
 });
+
+// DISPLAY TINKER WIKI /////
 
 tinkerWikiIcon.addEventListener("click", () => {
   if (
@@ -45,6 +69,13 @@ tinkerWikiLeaveIcon.addEventListener("click", () => {
   tinkerWikiPage.style.display = "none";
   iconArea.style.display = "block";
 });
+
+cheeseBookLeaveIcon.addEventListener("click", () => {
+  cheeseBookPage.style.display = "none";
+  iconArea.style.display = "block";
+});
+
+// DISPLAY CHEESE NOTES MESSAGES //////
 
 document.addEventListener("DOMContentLoaded", function () {
   // Hide all notes initially
@@ -76,6 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// POSITION DESKTOP FOLDERS //////
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector("#desktop .desktop_mainwindow");
   const folders = document.querySelectorAll(
@@ -94,6 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
     folder.style.top = `${randomTop}px`;
   });
 });
+
+// DISPLAY AND HIDE TINKER WIKI ITEMS //////
 
 document.addEventListener("DOMContentLoaded", () => {
   const inventoryItems = document.querySelectorAll(".inventory_item");

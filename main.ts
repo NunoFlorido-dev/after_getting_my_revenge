@@ -3,6 +3,7 @@ import { loader } from './assets/resources';
 import { MainScene } from './assets/scenes/main_scene';
 import { PCScene } from './assets/scenes/pc_scene'; 
 
+
 // Create a game engine with basic settings
 const game = new ex.Engine({
   pixelArt: true,
@@ -19,6 +20,8 @@ const game = new ex.Engine({
 
 // Start game with the main scene
 game.start(loader).then(() => {
+  const loadingscreen = document.getElementById("loading-screen");
+  if (loadingscreen) loadingscreen.remove();
   game.goToScene('mainscene'); // Set the starting scene
   game.canvas.style.cursor = 'none'; // Hide the cursor
   game.canvas.style.pointerEvents = 'auto'; // Enable pointer interactions
@@ -66,3 +69,6 @@ if(game.currentSceneName === "pcscene"){
 
 
 });
+
+
+

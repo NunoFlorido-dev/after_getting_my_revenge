@@ -64,6 +64,8 @@ canvas{
     padding: 2rem;
     justify-content: center;
     align-items: flex-start;
+
+    cursor: url("/public/images/rato_normal.png"), auto;
 }
 
 #desktop .desktop_navbar{
@@ -190,18 +192,22 @@ canvas{
 
 #desktop .desktop_mainwindow .mainwindow_iconarea .norbot_app:hover{
     cursor: pointer;
+    cursor: url("/public/images/rato_select.png"), auto;
 }
 
 #desktop .desktop_mainwindow .mainwindow_iconarea .cheese_notes_app:hover{
     cursor: pointer;
+    cursor: url("/public/images/rato_select.png"), auto;
 }
 
 #desktop .desktop_mainwindow .mainwindow_iconarea .tinker_wiki_app:hover{
     cursor: pointer;
+    cursor: url("/public/images/rato_select.png"), auto;
 }
 
 #desktop .desktop_mainwindow .mainwindow_iconarea .cheese_book_app:hover{
     cursor: pointer;
+    cursor: url("/public/images/rato_select.png"), auto;
 }
 
 #desktop .mainwindow_cheesenotes {
@@ -265,6 +271,10 @@ canvas{
     margin-left: 0.5rem;
 }
 
+#desktop .mainwindow_cheesenotes .cheesenotes_leave {
+  cursor: url("/public/images/rato_select.png"), auto;
+}
+
 #desktop .mainwindow_cheesenotes .cheesenotes_message{
     width: 100%;
     height: 100%;
@@ -290,6 +300,7 @@ cursor: pointer;
 
 #desktop .mainwindow_cheesenotes .cheesenotes_messagepreview div:hover{
     background-color: #ffff71;
+    cursor: url("/public/images/rato_select.png"), auto;
 }
 
 #desktop .mainwindow_cheesenotes .cheesenotes_messagepreview div:hover p{
@@ -351,6 +362,7 @@ cursor: pointer;
 
 #desktop .mainwindow_tinkerwiki .tinkerwiki_leavenav:hover {
     cursor: pointer;
+    cursor: url("/public/images/rato_select.png"), auto;
 }
 
 /* LEAVE BUTTON */
@@ -385,11 +397,13 @@ cursor: pointer;
 
 #desktop .mainwindow_tinkerwiki .inventory_item:hover{
   cursor: pointer;
+  cursor: url("/public/images/rato_select.png"), auto;
 }
 
 #desktop .mainwindow_tinkerwiki .inventory_item img{
     width: 4rem;
     height: auto;
+    transform-origin: center;
 }
 
 #desktop .mainwindow_tinkerwiki .inventory_item h1{
@@ -416,14 +430,13 @@ cursor: pointer;
     grid-column: 1 / span 3;
   }
   
-  /* Hide invention pages by default too */
   .invention_page {
-    display: none; /* default state */
+    display: none; 
     width: 100%;
     max-width: 800px;
     background: white;
     gap: -0.5rem;
-    overflow: hidden; /* Hide overflow outside this box */
+    overflow: hidden; 
 
     display: grid;
     align-items: start;
@@ -431,7 +444,6 @@ cursor: pointer;
 }
 
 
-  /* Left column (image + button) */
   .invention_left {
     display: flex;
     flex-direction: column;
@@ -439,6 +451,8 @@ cursor: pointer;
     gap: 0.5rem;
     overflow-y: hidden;
     position: sticky;  
+    height: 100%;
+    padding-bottom: 2rem;
   }
   
    .invention_left button {
@@ -451,10 +465,10 @@ cursor: pointer;
     margin-top: 1rem;
     margin-bottom: 1rem;
     cursor: pointer;
+    cursor: url("/public/images/rato_select.png"), auto;
     font-family: "Neue Montreal Mono", sans-serif;
   }
   
-  /* Make the image look nice */
   .invention_left img {
     width: 8rem;
     height: auto;
@@ -468,7 +482,6 @@ cursor: pointer;
     margin-top: -0.1rem;
   }
   
-  /* Right text area */
   .invention_right {
     font-family: "Neue Montreal Mono", sans-serif;
     padding-left: 1rem;
@@ -503,6 +516,7 @@ cursor: pointer;
     filter: invert();
     cursor: pointer;
     margin-left: 1rem;
+    cursor: url("/public/images/rato_select.png"), auto;
   }
 
   .cheesebook_nav p{

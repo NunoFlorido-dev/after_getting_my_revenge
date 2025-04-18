@@ -318,6 +318,7 @@ cursor: pointer;
 
  #desktop .mainwindow_cheesenotes .cheesenotes_message{
     border-left: 1px solid #ffff71;
+    opacity: 0;
   }
 
 #desktop .mainwindow_cheesenotes .cheesenotes_message div{

@@ -11,3 +11,4 @@ export class DeskActor extends ex.Actor {
         this.graphics.use(Sprites.Desk()); // Use preloaded sprite
     }
 }
+

@@ -1,7 +1,5 @@
 import * as ex from 'excalibur';
-import { MainScene } from './main_scene';
 import { MonitorActor } from '../actors/monitor';
-import { MonitorFrameActor } from '../actors/monitor_frame';
 
 
 export class PCScene extends ex.Scene {

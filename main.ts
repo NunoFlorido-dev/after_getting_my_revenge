@@ -4,6 +4,7 @@ import { MainScene } from './assets/scenes/main_scene';
 import { PCScene } from './assets/scenes/pc_scene'; 
 
 
+
 // Create a game engine with basic settings
 const game = new ex.Engine({
   pixelArt: true,
@@ -15,10 +16,10 @@ const game = new ex.Engine({
   scenes: {
     mainscene: MainScene,
     pcscene: PCScene,
-  }
+  },
 });
 
-// Start game with the main scene
+// Start game with the main scSene
 game.start(loader).then(() => {
   const loadingscreen = document.getElementById("loading-screen");
   if (loadingscreen) loadingscreen.remove();

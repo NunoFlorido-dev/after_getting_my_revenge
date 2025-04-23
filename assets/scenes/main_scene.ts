@@ -4,7 +4,6 @@ import { GloveActor } from '../actors/glove';
 import { MonitorActor } from '../actors/monitor';
 import { ArmActor } from '../actors/arm';
 import { KeyboardActor } from '../actors/keyboard';
-import { MonitorFrameActor } from '../actors/monitor_frame';
 import { UIPreview } from '../actors/ui_preview';
 import { DeskActor } from '../actors/desk';
 import { MugActor } from '../actors/mug';

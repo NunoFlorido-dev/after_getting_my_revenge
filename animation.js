@@ -8,11 +8,11 @@ const inventionImages = document.querySelectorAll(
 
 inventionImages.forEach((invention) => {
   invention.addEventListener("mouseover", () => {
-    gsap.to(invention, { scale: 1.5, duration: 1, ease: "back.inOut" });
+    gsap.to(invention, { scale: 1.5, duration: 1, ease: "elastic.out" });
   });
 
   invention.addEventListener("mouseout", () => {
-    gsap.to(invention, { scale: 1, duration: 1, ease: "back.inOut" });
+    gsap.to(invention, { scale: 1, duration: 1, ease: "elastic.out" });
   });
 });
 
@@ -24,39 +24,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
   specificInventionImages.forEach((invention) => {
     invention.addEventListener("mouseover", () => {
-      gsap.to(invention, { scale: 1.5, duration: 1, ease: "back.inOut" });
+      gsap.to(invention, { scale: 1.5, duration: 1, ease: "elastic.out" });
     });
 
     invention.addEventListener("mouseout", () => {
-      gsap.to(invention, { scale: 1, duration: 1, ease: "back.inOut" });
+      gsap.to(invention, { scale: 1, duration: 1, ease: "elastic.out" });
     });
   });
 });
 
-// CHEESE NOTES ////////// CHEESE NOTES /////// CHEESE NOTES //////
+// CHEESE BOOK ////////// CHEESE BOOK /////// CHEESE BOOK //////
+
+const likes = document.querySelectorAll(
+  ".cheesebook_main .cheesebook_posts .posts .cracker_like"
+);
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cheeseNotesPreview = document.querySelectorAll(
-    ".mainwindow_cheesenotes .cheesenotes_messagepreview div"
-  );
+  likes.forEach((like) => {
+    let toggle = false;
 
-  const cheeseNotesMessages = document.querySelectorAll(
-    ".mainwindow_cheesenotes .cheesenotes_message"
-  );
+    like.addEventListener("click", () => {
+      toggle = !toggle;
 
-  cheeseNotesPreview.forEach((notePrev) => {
-    notePrev.addEventListener("mouseover", () => {
-      gsap.to(notePrev, { backgroundColor: "#ffff71", duration: 0.25 });
+      const postMain = like.closest(".post_main");
+      const cracksP = postMain.querySelector("p:last-of-type");
 
-      notePrev.addEventListener("click", () => {
-        cheeseNotesMessages.forEach((message) => {
-          gsap.to(message, { opacity: 1, duration: 0.5 });
+      let currentText = cracksP.textContent;
+      let numberMatch = currentText.match(/\d+/);
+      let currentNumber = numberMatch ? parseInt(numberMatch[0]) : 0;
+      let newNumber = toggle ? currentNumber + 1 : currentNumber - 1;
+      cracksP.textContent = `${newNumber} Cracks!`;
+
+      // ✅ Animation
+      if (toggle) {
+        gsap.to(like, {
+          filter:
+            "brightness(0) saturate(100%) invert(79%) sepia(79%) saturate(740%) hue-rotate(3deg) brightness(91%) contrast(101%)",
+          scale: 1.5,
+          ease: "ease.in",
+          duration: 0.5,
+          onComplete: () => {
+            gsap.to(like, {
+              scale: 1,
+              duration: 0.8,
+              ease: "ease.in",
+            });
+          },
         });
-      });
-    });
-
-    notePrev.addEventListener("mouseout", () => {
-      gsap.to(notePrev, { backgroundColor: "#292929", duration: 0.25 });
+      } else {
+        gsap.to(like, {
+          filter: "none",
+        });
+      }
     });
   });
 });

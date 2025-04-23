@@ -15,6 +15,26 @@ let cheeseBookIcon = document.querySelector(".cheese_book_app");
 
 let cheeseBookLeaveIcon = document.querySelector(".cheesebook_leave");
 
+let norbotPage = document.querySelector(".mainwindow_norbot");
+let norbotIcon = document.querySelector(".norbot_app");
+
+let norbotLeaveIcon = document.querySelector(".norbot_leaveicon");
+
+let feathersIcon = document.getElementById("friend_feathers");
+let feathersMessages = document.querySelector(".feathers_messages");
+
+let wererabbitButton = document.getElementById("wererabbit_minigame");
+
+// DISPLAY NORBOT /////
+
+norbotIcon.addEventListener("click", () => {
+  if (norbotPage.style.display === "none" || norbotIcon.style.display === "") {
+    norbotPage.style.display = "flex";
+  } else {
+    norbotPage.style.display = "none";
+  }
+});
+
 // DISPLAY CHEESE BOOK /////
 
 cheeseBookIcon.addEventListener("click", () => {
@@ -27,6 +47,14 @@ cheeseBookIcon.addEventListener("click", () => {
   } else {
     cheeseBookPage.style.display = "none";
     iconArea.style.display = "block";
+  }
+});
+
+feathersIcon.addEventListener("click", () => {
+  if (feathersMessages.style.display === "none") {
+    feathersMessages.style.display = "grid";
+  } else {
+    feathersMessages.style.display = "none";
   }
 });
 
@@ -73,6 +101,10 @@ tinkerWikiLeaveIcon.addEventListener("click", () => {
 cheeseBookLeaveIcon.addEventListener("click", () => {
   cheeseBookPage.style.display = "none";
   iconArea.style.display = "block";
+});
+
+norbotLeaveIcon.addEventListener("click", () => {
+  norbotPage.style.display = "none";
 });
 
 // DISPLAY CHEESE NOTES MESSAGES //////
@@ -177,4 +209,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial state: hide everything
   hideAllInventionPages();
+});
+
+// Wererabbit minigame
+wererabbitButton.addEventListener("click", () => {
+  window.open(
+    "wererabbit.html",
+    "Wererabbit Minigame",
+    "width=600,height=400,fullscreen=no"
+  );
 });

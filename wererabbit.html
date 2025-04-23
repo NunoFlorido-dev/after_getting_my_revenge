@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wererabbit Minigame</title>
+  </head>
+  <body></body>
+  <script type="module">
+    import * as ex from "excalibur";
+    import { loader } from "./assets/resources";
+    import { Minigame } from "./assets/scenes/minigame";
+
+    const minigame = new ex.Engine({
+      pixelArt: true,
+      fixedUpdateFps: 60,
+      antialiasing: false,
+      displayMode: ex.DisplayMode.FillScreen,
+      suppressPlayButton: true,
+      backgroundColor: ex.Color.Black,
+      scenes: {
+        minigame: Minigame,
+      },
+    });
+
+    minigame.start(loader).then(() => {
+      minigame.goToScene("minigame");
+      console.log("Minigame loaded");
+    });
+  </script>
+</html>

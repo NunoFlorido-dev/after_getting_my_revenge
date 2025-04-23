@@ -15,6 +15,10 @@ export const Resources = {
     Desk: new ex.ImageSource('./public/images/mesa.png'),
     ExitNote: new ex.ImageSource('./public/images/nota_exit.png'),
     Mug: new ex.ImageSource('./public/images/caneca_cheio.png'),
+    Wererabbit: new ex.ImageSource('./public/images/wererabbit.png'),
+    WererabbitJump: new ex.ImageSource('./public/images/wererabbit.png'),
+    WererabbitSlide: new ex.ImageSource('./public/images/wererabbit.png'),
+    Vegetable: new ex.ImageSource('./public/images/vegetable.png'),
   };
   
 

@@ -79,3 +79,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// CHEESE NOTES
+const minigame = document.getElementById("wererabbit_minigame");
+
+minigame.addEventListener("mouseover", () => {
+  gsap.to(minigame, {
+    scale: 1.5,
+    duration: 0.5,
+    ease: "bounce.out",
+  });
+});
+
+minigame.addEventListener("mouseout", () => {
+  gsap.to(minigame, {
+    scale: 1,
+    duration: 0.5,
+    ease: "bounce.out",
+  });
+});
+
+// Moon Rocket Easter Egg
+const moonRocket = document.getElementById("rocket_easter_egg");
+
+moonRocket.addEventListener("click", () => {
+  gsap.to(moonRocket, {
+    y: -100,
+    duration: 5,
+    ease: "bounce.out",
+  });
+});

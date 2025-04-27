@@ -18,5 +18,7 @@ export const Sprites = {
   Wererabbit: () => new ex.Sprite({ image: Resources.Wererabbit }),
   WererabbitJump: () => new ex.Sprite({ image: Resources.WererabbitJump }),
   WererabbitSlide: () => new ex.Sprite({ image: Resources.WererabbitSlide }),
-  Vegetable: () => new ex.Sprite({ image: Resources.Vegetable })
+  Vegetable: () => new ex.Sprite({ image: Resources.Vegetable }),
+  FolderOpen: () => new ex.Sprite({ image: Resources.FolderOpen }),
+  FolderClosed: () => new ex.Sprite({ image: Resources.FolderClosed }),
 };

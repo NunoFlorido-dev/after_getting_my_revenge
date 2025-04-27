@@ -19,6 +19,8 @@ export const Resources = {
     WererabbitJump: new ex.ImageSource('./public/images/wererabbit.png'),
     WererabbitSlide: new ex.ImageSource('./public/images/wererabbit.png'),
     Vegetable: new ex.ImageSource('./public/images/vegetable.png'),
+    FolderOpen: new ex.ImageSource('./public/images/pasta_creditos.png'),
+    FolderClosed: new ex.ImageSource('./public/images/pasta_fechada.png'),
   };
   
 

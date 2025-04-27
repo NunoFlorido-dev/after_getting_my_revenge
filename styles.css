@@ -328,6 +328,15 @@ height: 3rem;
 cursor: pointer;
 }
 
+#wererabbit_minigame{
+    border: none;
+    padding: 1rem .5rem;
+    margin-bottom: 1rem;
+    font-family: "Neue Montreal Mono", sans-serif;
+    cursor: url("/public/images/rato_select.png"), auto;
+    background-color: #ffff71;
+}
+
 #desktop .mainwindow_cheesenotes .cheesenotes_messagepreview div:hover{
     background-color: #ffff71;
     cursor: url("/public/images/rato_select.png"), auto;
@@ -642,6 +651,12 @@ cursor: pointer;
     margin-bottom: 1rem;
     }
 
+    .cheesebook_main .cheesebook_friends .friends img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
     .cheesebook_main .feathers_messages{
       width: 12rem;
       height: 200px;
@@ -702,6 +717,12 @@ cursor: pointer;
 
     #wererabbit_minigame{
       padding: 1rem;
+      position: relative;
+      left: 32.5%
     }
 
-  
+  /* Moon Rocket Easter Egg */
+
+#rocket_easter_egg:hover{
+  cursor: url("/public/images/rato_select.png"), auto;
+}

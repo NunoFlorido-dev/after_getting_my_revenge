@@ -7,7 +7,7 @@ import { KeyboardActor } from '../actors/keyboard';
 import { UIPreview } from '../actors/ui_preview';
 import { DeskActor } from '../actors/desk';
 import { MugActor } from '../actors/mug';
-import { Folder } from '../actors/folder';
+import { FolderActor } from '../actors/folder';
 
 
 
@@ -29,7 +29,7 @@ export class MainScene extends ex.Scene {
     const monitorOut = new MonitorActor(centerScreenX, centerScreenY - 100, 3.25);
     const ui_preview = new UIPreview(centerScreenX, centerScreenY - 120);
     const keyboard = new KeyboardActor(centerScreenX, centerScreenY + 250);
-    const folder = new Folder(centerScreenX + 350, centerScreenY + 25);
+    const folder = new FolderActor(centerScreenX + 350, centerScreenY + 25);
 
     // Set Z-index to control rendering order
 desk.z = 0;  

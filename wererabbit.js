@@ -130,8 +130,6 @@ class Char {
     this.y = y;
     this.w = 50;
     this.h = 50;
-    this.wB = 40;
-    this.hB = 40;
     this.originalY = y;
     this.activateJump = false;
     this.isInThreshold = false;
@@ -159,6 +157,7 @@ class Char {
   }
 
   display() {
+    imageMode(CENTER);
     image(this.img, this.x, this.y, this.w, this.h);
   }
 
@@ -170,10 +169,10 @@ class Char {
 
   interact(p) {
     return (
-      this.x + this.wB / 2 - 20 > p.x - p.wB / 2 &&
-      this.x - this.wB / 2 - 20 < p.x + p.wB / 2 &&
-      this.y + this.hB / 2 - 20 > p.y - p.hB / 2 &&
-      this.y - this.hB / 2 - 20 < p.y + p.hB / 2
+      this.x + this.w / 2 > p.x - p.w / 2 + 20 &&
+      this.x - this.w / 2 < p.x + p.w / 2 - 20 &&
+      this.y + this.h / 2 > p.y - p.h / 2 + 20 &&
+      this.y - this.h / 2 < p.y + p.h / 2 - 20
     );
   }
 
@@ -189,14 +188,13 @@ class Pipe {
     this.y = y;
     this.w = 50;
     this.h = 50;
-    this.wB = 40;
-    this.hB = 40;
     this.img = img;
     this.img = img;
     this.spot = spot;
   }
 
   display() {
+    imageMode(CENTER);
     image(this.img, this.x, this.y, this.w, this.h);
   }
   move() {

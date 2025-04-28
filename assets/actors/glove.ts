@@ -1,6 +1,7 @@
 import * as ex from 'excalibur';
 import { Sprites } from '../graphics';
 import { MouseActor } from './mouse';
+import { FolderActor } from './folder';
 
 export class GloveActor extends ex.Actor {
     private isHoveringMouse: boolean = false; // Track if glove is over the mouse
@@ -37,18 +38,21 @@ export class GloveActor extends ex.Actor {
         if (other.owner instanceof MouseActor) {
             this.graphics.use(Sprites.GloveActive()); // Use preloaded sprite
             this.isHoveringMouse = true;
+        }else if(other.owner instanceof FolderActor){
+            this.graphics.use(Sprites.GloveActive()); // Use preloaded sprite
         }else{
             this.graphics.use(Sprites.Glove()); 
             this.isHoveringMouse = false
         }
-
     }
 
     override onCollisionEnd(_self: ex.Collider, other: ex.Collider): void {
         if (other.owner instanceof MouseActor) {
             this.graphics.use(Sprites.Glove()); // Use preloaded sprite
             this.isHoveringMouse = false;
-    }
+    }else if (other.owner instanceof FolderActor){
+        this.graphics.use(Sprites.Glove()); // Use preloaded sprite
+}
 
 }
 }

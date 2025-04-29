@@ -657,15 +657,6 @@ cursor: pointer;
       height: 100%;
     }
 
-    .cheesebook_main .feathers_messages{
-      width: 12rem;
-      height: 200px;
-      display: none;
-      background-color: blue;
-      z-index: 4;
-      position: absolute;
-      transform: translate(16rem, 0.5rem);
-    }
 
     /* NORBOT */
 
@@ -724,5 +715,80 @@ cursor: pointer;
   /* Moon Rocket Easter Egg */
 
 #rocket_easter_egg:hover{
+  cursor: url("/public/images/rato_select.png"), auto;
+}
+
+/* Feathers Easter Egg */
+#friend_feathers{
+  cursor: url("/public/images/rato_select.png"), auto;
+}
+
+.cheesebook_main .feathers_messages{
+  width: 12rem;
+  height: 200px;
+  display: none;
+  border: 1px solid #e3ab12;
+  background-color: white;
+  z-index: 4;
+  position: absolute;
+  transform: translate(16rem, 0.5rem);
+}
+
+
+.cheesebook_main .feathers_messages .feathers_nav{
+  width: 100%;
+  height: 4rem;
+  background-color: #e3ab12;
+  display: flex;
+  align-items: center;
+}
+
+.cheesebook_main .feathers_messages .feathers_nav{
+  width: 100%;
+  height: 2rem;
+  background-color: #e3ab12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cheesebook_main .feathers_messages .feathers_nav img{
+  width: 2rem;
+}
+
+.cheesebook_main .feathers_messages .feathers_nav p{
+  font-family: "Pixelated Elegance", sans-serif;
+  color: black;
+  font-size: .75rem;
+}
+
+.feathers_leave{
+  cursor: url("/public/images/rato_select.png"), auto;
+}
+
+.feathers_message{
+  background-color: lightgrey;
+  height: 5rem;
+  border-radius: 2rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  padding-left: 1rem;
+  padding-right: .75rem;
+  display: flex;
+  align-items: center;
+
+}
+
+.feathers_message p{
+  font-family: "Pixelated Elegance", sans-serif;
+  font-size: .75rem;
+  margin-bottom: .4rem;
+}
+
+.feathers_message p button{
+  margin-top: .1rem;
+  font-size: .75rem;
+}
+.feathers_message p button:hover{
   cursor: url("/public/images/rato_select.png"), auto;
 }

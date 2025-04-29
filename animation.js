@@ -109,3 +109,22 @@ moonRocket.addEventListener("click", () => {
     ease: "bounce.out",
   });
 });
+
+// Feathers Adware Easter Egg
+const adwareButton = document.querySelector(".feathers_message p button");
+
+adwareButton.addEventListener("mouseover", () => {
+  gsap.to(adwareButton, {
+    scale: 1.5,
+    duration: 0.5,
+    ease: "bounce.out",
+  });
+
+  setTimeout(() => {
+    gsap.to(adwareButton, {
+      scale: 1,
+      duration: 0.5,
+      ease: "bounce.out",
+    });
+  }, 500);
+});

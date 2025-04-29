@@ -22,6 +22,7 @@ let norbotLeaveIcon = document.querySelector(".norbot_leaveicon");
 
 let feathersIcon = document.getElementById("friend_feathers");
 let feathersMessages = document.querySelector(".feathers_messages");
+let feathersLeaveIcon = document.querySelector(".feathers_leave");
 
 let wererabbitButton = document.getElementById("wererabbit_minigame");
 
@@ -56,6 +57,10 @@ feathersIcon.addEventListener("click", () => {
   } else {
     feathersMessages.style.display = "none";
   }
+});
+
+feathersLeaveIcon.addEventListener("click", () => {
+  feathersMessages.style.display = "none";
 });
 
 // DISPLAY CHEESE NOTES /////
@@ -216,6 +221,16 @@ wererabbitButton.addEventListener("click", () => {
   window.open(
     "wererabbit.html",
     "Wererabbit Minigame",
+    "width=600,height=400,fullscreen=no"
+  );
+});
+
+//Feathers Adware
+const adwareButton = document.querySelector(".feathers_message p button");
+adwareButton.addEventListener("click", () => {
+  window.open(
+    "feathers_adware.html",
+    "Feathers Adware",
     "width=600,height=400,fullscreen=no"
   );
 });

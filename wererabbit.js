@@ -87,6 +87,9 @@ function keyPressed() {
   if (keyCode === UP_ARROW) {
     char.jump();
   }
+  if (keyCode === DOWN_ARROW) {
+    char.changeDownInc();
+  }
 }
 
 function restartGame() {
@@ -130,6 +133,7 @@ class Char {
     this.y = y;
     this.w = 50;
     this.h = 50;
+    this.downInc = 1;
     this.originalY = y;
     this.activateJump = false;
     this.isInThreshold = false;
@@ -137,8 +141,6 @@ class Char {
   }
 
   move() {
-    print(this.activateJump);
-
     if (this.activateJump) {
       this.y -= 3;
       if (this.y <= this.originalY - 90) {
@@ -147,7 +149,7 @@ class Char {
       }
     } else {
       if (this.isInThreshold) {
-        this.y += 1;
+        this.y += this.downInc;
         if (this.y >= this.originalY) {
           this.isInThreshold = false;
           this.activateJump = false;
@@ -156,14 +158,19 @@ class Char {
     }
   }
 
+  changeDownInc() {
+    this.downInc += 1;
+  }
+
   display() {
     imageMode(CENTER);
     image(this.img, this.x, this.y, this.w, this.h);
   }
 
   jump() {
-    if (this.y == this.originalY) {
+    if (this.y >= this.originalY) {
       this.activateJump = true;
+      this.downInc = 1;
     }
   }
 

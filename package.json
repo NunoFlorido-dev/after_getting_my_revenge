@@ -1,12 +1,14 @@
 {
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "typescript": "5.8.2",
     "vite": "6.2.2"
   },
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build",
-    "serve": "vite preview"
+    "build": "vite build",
+    "serve": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "excalibur": "0.30.3",

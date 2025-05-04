@@ -2,6 +2,7 @@ import * as ex from 'excalibur';
 import { loader } from './assets/resources';
 import { MainScene } from './assets/scenes/main_scene';
 import { PCScene } from './assets/scenes/pc_scene'; 
+import { CreditsScene } from './assets/scenes/credits_scene';
 
 
 
@@ -16,6 +17,7 @@ const game = new ex.Engine({
   scenes: {
     mainscene: MainScene,
     pcscene: PCScene,
+    credits: CreditsScene,
   },
 });
 
@@ -35,11 +37,17 @@ game.on('start', () => {
 });
 
 const exit_note = document.getElementById("exit_note");
+const exit_note_credits = document.getElementById("exit_note_credits");
 const canvas = document.querySelector('canvas');
 
 if (exit_note) {
   document.body.prepend(exit_note);
   exit_note.style.zIndex = "20";
+}
+
+if (exit_note_credits) {
+  document.body.prepend(exit_note_credits);
+  exit_note_credits.style.zIndex = "3";
 }
 
 if (canvas) {
@@ -61,9 +69,22 @@ if(game.currentSceneName === "pcscene"){
       exit_note.style.cursor = "pointer";
     })
   }
+ }else if(game.currentSceneName === "credits"){
+  if(exit_note_credits){
+    exit_note_credits.style.display = 'block';
+
+
+    exit_note_credits.addEventListener("click", () => {
+      game.goToScene("mainscene");
+    })
+  }
  }else{
   if(exit_note){
   exit_note.style.display = 'none';
+  }
+
+  if(exit_note_credits){
+    exit_note_credits.style.display = "none";
   }
  }
 

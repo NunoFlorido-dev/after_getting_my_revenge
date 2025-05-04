@@ -5,6 +5,7 @@ import { FolderActor } from './folder';
 
 export class GloveActor extends ex.Actor {
     private isHoveringMouse: boolean = false; // Track if glove is over the mouse
+    private isHoveringFolder: boolean = false; // Track if glove is over the folder
     private mouseRef!: ex.Actor; // Reference to the MouseActor
 
     constructor() {
@@ -25,12 +26,16 @@ export class GloveActor extends ex.Actor {
             this.pos = event.worldPos; // Update position to match cursor
         });
 
+
            // Listen for mouse clicks
            engine.input.pointers.primary.on('down', () => {
             if (this.isHoveringMouse) {
                 engine.goToScene('pcscene'); // Transition to the new scene
             }
 
+            if(this.isHoveringFolder){
+                engine.goToScene('credits'); // Transition to the new scene
+            }
         });
     }
 
@@ -40,9 +45,11 @@ export class GloveActor extends ex.Actor {
             this.isHoveringMouse = true;
         }else if(other.owner instanceof FolderActor){
             this.graphics.use(Sprites.GloveActive()); // Use preloaded sprite
+            this.isHoveringFolder = true;
         }else{
             this.graphics.use(Sprites.Glove()); 
             this.isHoveringMouse = false
+            this.isHoveringFolder = false;
         }
     }
 
@@ -52,7 +59,9 @@ export class GloveActor extends ex.Actor {
             this.isHoveringMouse = false;
     }else if (other.owner instanceof FolderActor){
         this.graphics.use(Sprites.Glove()); // Use preloaded sprite
+        this.isHoveringFolder = false;
+}
 }
 
-}
+  
 }

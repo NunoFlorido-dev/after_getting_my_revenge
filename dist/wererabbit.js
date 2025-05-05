@@ -14,12 +14,12 @@ let gameOver = false;
 let restartBtn, closeBtn;
 
 function preload() {
-  run1 = loadImage("/public/images/wererabit_1.png");
-  run2 = loadImage("/public/images/wererabit_2.png");
-  jump = loadImage("/public/images/wererabbit_jump.png");
+  run1 = loadImage("/images/wererabit_1.png");
+  run2 = loadImage("/images/wererabit_2.png");
+  jump = loadImage("/images/wererabbit_jump.png");
   imgChar = run1;
-  imgPipe = loadImage("/public/images/cenoura.png");
-  font = loadFont("/public/fonts/PPNeueMontrealMono-Light.woff");
+  imgPipe = loadImage("/images/cenoura.png");
+  font = loadFont("/fonts/PPNeueMontrealMono-Light.woff");
 }
 
 function setup() {

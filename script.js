@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Wererabbit minigame
 wererabbitButton.addEventListener("click", () => {
   window.open(
-    "wererabbit.html",
+    "/wererabbit.html",
     "Wererabbit Minigame",
     "width=600,height=400,fullscreen=no"
   );
@@ -229,7 +229,7 @@ wererabbitButton.addEventListener("click", () => {
 const adwareButton = document.querySelector(".feathers_message p button");
 adwareButton.addEventListener("click", () => {
   window.open(
-    "feathers_adware.html",
+    "/feathers_adware.html",
     "Feathers Adware",
     "width=600,height=400,fullscreen=no"
   );

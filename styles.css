@@ -1,48 +1,48 @@
 @font-face {
     font-family: "Right Grotesk Mono";
-    src: url("/public/fonts/PPRightGroteskMono-Light.woff");
+    src: url("/fonts/PPRightGroteskMono-Light.woff");
 }
 
 @font-face {
     font-family: "Neue Montreal Mono";
-    src: url("/public/fonts/PPNeueMontrealMono-Light.woff");
+    src: url("/fonts/PPNeueMontrealMono-Light.woff");
 }
 
 @font-face {
     font-family: "Pixelated Elegance";
-    src: url("/public/fonts/PixelatedElegance.ttf");
+    src: url("/fonts/PixelatedElegance.ttf");
 }
 
 @font-face {
     font-family: "Dogica Pixel";
-    src: url("/public/fonts/dogicapixel.ttf");
+    src: url("/fonts/dogicapixel.ttf");
 }
 
 @font-face {
   font-family: "Matrix Mono";
-  src: url("/public/fonts/Matrix_Mono.ttf");
+  src: url("/fonts/Matrix_Mono.ttf");
 }
 
 @font-face {
   font-family: "Illusion Book";
-  src: url("/public/fonts/IllusionBook-Regular.woff");
+  src: url("/fonts/IllusionBook-Regular.woff");
 }
 
 @font-face {
   font-family: "Cloude Regular";
-  src: url("/public/fonts/Cloude_Regular_1.02.ttf");
+  src: url("/fonts/Cloude_Regular_1.02.ttf");
 }
 
 @font-face{
   font-family: "Groutpix Slab";
-  src: url("/public/fonts/GroutpixFlowSlabSerif.ttf");
+  src: url("/fonts/GroutpixFlowSlabSerif.ttf");
 }
 
 html, body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-image: url("public/images/parede.png");
+    background-image: url("/images/parede.png");
     background-size: cover;
 }
 
@@ -78,7 +78,7 @@ canvas{
     top: 2%;
     width: 125px;
     height: 125px;
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
 }
 
 #desktop{
@@ -95,7 +95,7 @@ canvas{
     justify-content: center;
     align-items: flex-start;
 
-    cursor: url("/public/images/rato_normal.png"), auto;
+    cursor: url("/images/rato_normal.png"), auto;
 }
 
 #desktop .desktop_navbar{
@@ -222,22 +222,22 @@ canvas{
 
 #desktop .desktop_mainwindow .mainwindow_iconarea .norbot_app:hover{
     cursor: pointer;
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
 }
 
 #desktop .desktop_mainwindow .mainwindow_iconarea .cheese_notes_app:hover{
     cursor: pointer;
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
 }
 
 #desktop .desktop_mainwindow .mainwindow_iconarea .tinker_wiki_app:hover{
     cursor: pointer;
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
 }
 
 #desktop .desktop_mainwindow .mainwindow_iconarea .cheese_book_app:hover{
     cursor: pointer;
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
 }
 
 #desktop .mainwindow_cheesenotes {
@@ -302,7 +302,7 @@ canvas{
 }
 
 #desktop .mainwindow_cheesenotes .cheesenotes_leave {
-  cursor: url("/public/images/rato_select.png"), auto;
+  cursor: url("/images/rato_select.png"), auto;
 }
 
 #desktop .mainwindow_cheesenotes .cheesenotes_message{
@@ -333,13 +333,13 @@ cursor: pointer;
     padding: 1rem .5rem;
     margin-bottom: 1rem;
     font-family: "Neue Montreal Mono", sans-serif;
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
     background-color: #ffff71;
 }
 
 #desktop .mainwindow_cheesenotes .cheesenotes_messagepreview div:hover{
     background-color: #ffff71;
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
 }
 
 #desktop .mainwindow_cheesenotes .cheesenotes_messagepreview div:hover p{
@@ -401,7 +401,7 @@ cursor: pointer;
 
 #desktop .mainwindow_tinkerwiki .tinkerwiki_leavenav:hover {
     cursor: pointer;
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
 }
 
 /* LEAVE BUTTON */
@@ -435,7 +435,7 @@ cursor: pointer;
 
 #desktop .mainwindow_tinkerwiki .inventory_item:hover{
   cursor: pointer;
-  cursor: url("/public/images/rato_select.png"), auto;
+  cursor: url("/images/rato_select.png"), auto;
 }
 
 #desktop .mainwindow_tinkerwiki .inventory_item img{
@@ -504,7 +504,7 @@ cursor: pointer;
     margin-top: 1rem;
     margin-bottom: 1rem;
     cursor: pointer;
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
     font-family: "Matrix Mono", sans-serif;
     display: flex;
     align-items: center;
@@ -557,7 +557,7 @@ cursor: pointer;
     width: 3.25rem;
     cursor: pointer;
     margin-left: 1rem;
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
   }
 
   .cheesebook_nav p{
@@ -614,7 +614,7 @@ cursor: pointer;
   }
 
   .cheesebook_main .cheesebook_posts .posts div .cracker_like:hover{
-    cursor: url("/public/images/rato_select.png"), auto;
+    cursor: url("/images/rato_select.png"), auto;
   }
 
   .cheesebook_main .cheesebook_posts .posts div p
@@ -695,7 +695,7 @@ cursor: pointer;
     }
 
     .mainwindow_norbot .norbot_leaveicon:hover{
-      cursor: url("/public/images/rato_select.png"), auto;
+      cursor: url("/images/rato_select.png"), auto;
     }
 
     .mainwindow_norbot h1{
@@ -721,12 +721,12 @@ cursor: pointer;
   /* Moon Rocket Easter Egg */
 
 #rocket_easter_egg:hover{
-  cursor: url("/public/images/rato_select.png"), auto;
+  cursor: url("/images/rato_select.png"), auto;
 }
 
 /* Feathers Easter Egg */
 #friend_feathers{
-  cursor: url("/public/images/rato_select.png"), auto;
+  cursor: url("/images/rato_select.png"), auto;
 }
 
 
@@ -758,7 +758,7 @@ cursor: pointer;
 }
 
 .feathers_leave{
-  cursor: url("/public/images/rato_select.png"), auto;
+  cursor: url("/images/rato_select.png"), auto;
 }
 
 .cheesebook_main .feathers_messages{
@@ -797,7 +797,7 @@ cursor: pointer;
   font-size: .75rem;
 }
 .feathers_message p button:hover{
-  cursor: url("/public/images/rato_select.png"), auto;
+  cursor: url("/images/rato_select.png"), auto;
 }
 
 /* CREDITS */

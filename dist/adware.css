@@ -1,0 +1,29 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+#adware_cont{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  #adware_cont h1{
+    font-family: "Pixelated Elegance", sans-serif;
+    font-size: 2rem;
+    color: white;
+  }
+  
+  #adware_cont p{
+    font-family: "Illusion Book", sans-serif;
+    font-size: 1.25rem;
+    margin-top: -.75rem;
+    color: white;
+  }
+  

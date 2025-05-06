@@ -855,3 +855,10 @@ cursor: pointer;
   margin-top: -.75rem;
   color: white;
 }
+
+#chat_note{
+  position: relative;
+  width: 4rem;
+  right: 2rem;
+  bottom: 7rem;
+}

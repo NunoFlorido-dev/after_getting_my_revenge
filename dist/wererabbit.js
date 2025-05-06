@@ -45,7 +45,7 @@ function draw() {
   }
 
   // gameplay
-  background(0, 255, 255);
+  background("#57b9eb");
   drawGround();
   score += 0.1;
   fill(0);

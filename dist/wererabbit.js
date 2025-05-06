@@ -10,7 +10,8 @@ let pipes = [];
 let score = 0;
 let fr = 120;
 let originalFr = fr;
-let gameOver = false;
+let gameState = "start";
+let startBtn;
 let restartBtn, closeBtn;
 
 function preload() {
@@ -28,20 +29,27 @@ function setup() {
   imageMode(CENTER);
   textFont(font);
   textAlign(CENTER, CENTER);
-  char = new Char(width / 2 - 150, height / 2 + 76, imgChar);
+  if (gameState === "start") {
+    showStartScreen();
+  } else {
+    char = new Char(width / 2 - 150, height / 2 + 76, imgChar);
+  }
 }
 
 function draw() {
-  if (gameOver) {
+  if (gameState === "start") return;
+
+  if (gameState === "gameOver") {
     drawGameOverScreen();
     return;
   }
 
-  background(0);
+  // gameplay
+  background(0, 255, 255);
   drawGround();
   score += 0.1;
-  fill(255);
-  text("Score:" + round(score), 45, 25);
+  fill(0);
+  text("Score:" + round(score), 60, 25);
 
   if (frameCount % 960 === 0) {
     fr -= 5;
@@ -50,7 +58,6 @@ function draw() {
   if (frameCount % fr === 0) {
     let change = random(1) > 0.5;
     let yH = change ? height - 120 : height - 200;
-
     let pipe = new Pipe(random(width, width + 200), yH, imgPipe, true);
     pipes.push(pipe);
   }
@@ -59,10 +66,7 @@ function draw() {
     if (!char.interact(pipes[i])) {
       pipes[i].move();
       pipes[i].display();
-
-      if (pipes[i].x < -50) {
-        pipes.splice(i, 1);
-      }
+      if (pipes[i].x < -50) pipes.splice(i, 1);
     } else {
       console.log("Collision!");
       triggerGameOver();
@@ -71,16 +75,35 @@ function draw() {
   }
 
   let sec = round(millis() / 1000);
-  if (sec % 2 == 0) {
-    char.setImg(run1);
-  } else {
-    char.setImg(run2);
-  }
-  if (char.activateJump) {
-    char.setImg(jump);
-  }
+  char.setImg(sec % 2 == 0 ? run1 : run2);
+  if (char.activateJump) char.setImg(jump);
+
   char.move();
-  char.display(char);
+  char.display();
+}
+
+function showStartScreen() {
+  background(0);
+  fill(255);
+  textSize(28);
+  text("Welcome to Were-Rabbit Jump!", width / 2, height / 2 - 100);
+  textSize(18);
+  text(
+    "Use UP ARROW to Jump\nUse DOWN ARROW to increase fall speed\nAvoid the carrots!",
+    width / 2,
+    height / 2 - 20
+  );
+
+  startBtn = createButton("Start Game");
+  startBtn.position(width / 2 - 50, height / 2 + 40);
+  startBtn.mousePressed(startGame);
+}
+
+function startGame() {
+  startBtn.remove();
+  char = new Char(width / 2 - 150, height / 2 + 76, imgChar);
+  gameState = "playing";
+  loop();
 }
 
 function keyPressed() {
@@ -93,26 +116,22 @@ function keyPressed() {
 }
 
 function restartGame() {
-  // Reset everything
   score = 0;
   pipes = [];
   fr = 120;
   char = new Char(width / 2 - 150, height / 2 + 76, imgChar);
-  gameOver = false;
-
-  // Remove buttons
+  gameState = "playing";
   restartBtn.remove();
   closeBtn.remove();
-
-  loop(); // restart the draw loop
+  loop();
 }
 
 function triggerGameOver() {
-  gameOver = true;
-  noLoop(); // stop draw loop
-
-  text("Game Over", width / 2, height / 2 - 25);
-  text("Final Score: " + round(score), width / 2, height / 2);
+  gameState = "gameOver";
+  noLoop();
+  fill(0);
+  text("Game Over!", width / 2, height / 2 - 20);
+  text("Score:" + round(score), width / 2, height / 2 + 10);
   restartBtn = createButton("Restart");
   restartBtn.position(width / 2 - 60, height / 2 + 40);
   restartBtn.mousePressed(restartGame);

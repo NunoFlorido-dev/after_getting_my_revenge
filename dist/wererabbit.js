@@ -5,6 +5,7 @@ let imgPipe;
 let font;
 let carrot;
 let imgChar;
+let bgImg;
 
 let pipes = [];
 let score = 0;
@@ -21,6 +22,7 @@ function preload() {
   imgChar = run1;
   imgPipe = loadImage("/images/cenoura.png");
   font = loadFont("/fonts/PPNeueMontrealMono-Light.woff");
+  bgImg = loadImage("/images/cenario_jogo.png");
 }
 
 function setup() {
@@ -45,10 +47,9 @@ function draw() {
   }
 
   // gameplay
-  background("#57b9eb");
-  drawGround();
+  image(bgImg, width / 2, height / 2 + 85, width + 170, height + 170);
   score += 0.1;
-  fill(0);
+  fill(255);
   text("Score:" + round(score), 60, 25);
 
   if (frameCount % 960 === 0) {
@@ -139,11 +140,6 @@ function triggerGameOver() {
   closeBtn = createButton("Close");
   closeBtn.position(width / 2 + 20, height / 2 + 40);
   closeBtn.mousePressed(() => window.close());
-}
-
-function drawGround() {
-  fill("#8a8a8a");
-  rect(0, height - 100, width, 100);
 }
 
 class Char {

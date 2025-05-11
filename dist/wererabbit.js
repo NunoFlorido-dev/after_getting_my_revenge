@@ -15,6 +15,9 @@ let gameState = "start";
 let startBtn;
 let restartBtn, closeBtn;
 
+let jumpSound;
+let gameOverSound;
+
 function preload() {
   run1 = loadImage("/images/wererabit_1.png");
   run2 = loadImage("/images/wererabit_2.png");
@@ -23,6 +26,8 @@ function preload() {
   imgPipe = loadImage("/images/cenoura.png");
   font = loadFont("/fonts/PPNeueMontrealMono-Light.woff");
   bgImg = loadImage("/images/cenario_jogo.png");
+  jumpSound = loadSound("/sounds/cartoon-jump.mp3");
+  gameOverSound = loadSound("/sounds/game-over.mp3");
 }
 
 function setup() {
@@ -110,6 +115,7 @@ function startGame() {
 function keyPressed() {
   if (keyCode === UP_ARROW) {
     char.jump();
+    jumpSound.play();
   }
   if (keyCode === DOWN_ARROW) {
     char.changeDownInc();
@@ -129,6 +135,7 @@ function restartGame() {
 
 function triggerGameOver() {
   gameState = "gameOver";
+  gameOverSound.play();
   noLoop();
   fill(0);
   text("Game Over!", width / 2, height / 2 - 20);

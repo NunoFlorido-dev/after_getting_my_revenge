@@ -36,6 +36,7 @@ let music = new Howl({
   loop: true,
   volume: 0.5,
 });
+
 musicButton.addEventListener("click", () => {
   activateMusic = !activateMusic;
   if (activateMusic) {
@@ -50,6 +51,11 @@ musicButton.addEventListener("click", () => {
 });
 
 // DISPLAY NORBOT /////
+let click = new Howl({
+  src: ["/sounds/mouse-click.mp3"],
+  loop: true,
+  volume: 0.5,
+});
 
 norbotIcon.addEventListener("click", () => {
   if (norbotPage.style.display === "none" || norbotIcon.style.display === "") {
@@ -249,8 +255,19 @@ wererabbitButton.addEventListener("click", () => {
 });
 
 //Feathers Adware
+let shock = new Howl({
+  src: ["/sounds/crowd-shocked.mp3"],
+  loop: false,
+  volume: 0.5,
+});
+
 const adwareButton = document.querySelector(".feathers_message p button");
+let shockPlayed = false;
 adwareButton.addEventListener("click", () => {
+  if (!shockPlayed) {
+    shock.play();
+    shockPlayed = true;
+  }
   window.open(
     "/feathers_adware.html",
     "Feathers Adware",

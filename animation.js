@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import { Howl } from "howler";
 
 // TINKER WIKI ////////// TINKER WIKI /////// TINKER WIKI //////
 //Animate the inventions' images from TinkerWiki main page
@@ -102,7 +103,14 @@ minigame.addEventListener("mouseout", () => {
 // Moon Rocket Easter Egg
 const moonRocket = document.getElementById("rocket_easter_egg");
 
+let rocket_launch = new Howl({
+  src: ["/sounds/rocket-launch.mp3"],
+  loop: false,
+  volume: 0.5,
+});
+
 moonRocket.addEventListener("click", () => {
+  rocket_launch.play();
   gsap.to(moonRocket, {
     y: -100,
     duration: 5,

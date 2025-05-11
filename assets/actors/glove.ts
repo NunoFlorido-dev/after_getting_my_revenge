@@ -10,7 +10,9 @@ export class GloveActor extends ex.Actor {
     private isHoveringMouse: boolean = false; // Track if glove is over the mouse
     private isHoveringFolder: boolean = false; // Track if glove is over the folder
     private isHoveringCookiePlate: boolean = false; // Track if glove is over the cookie plate
+    private cookieCounter = 0;
     private isHoveringMug: boolean = false;
+    private mugCounter = 0;
     private mouseRef!: ex.Actor; // Reference to the MouseActor
 
     constructor() {
@@ -45,6 +47,7 @@ export class GloveActor extends ex.Actor {
             if(this.isHoveringFolder){
                 engine.goToScene('credits'); // Transition to the new scene
             }
+            if(this.cookieCounter < 1){
             if(this.isHoveringCookiePlate){
                 const cookiePlate = engine.currentScene.actors.find(actor => actor instanceof CookiePlateActor) as CookiePlateActor;
                 if (cookiePlate) {
@@ -54,8 +57,11 @@ export class GloveActor extends ex.Actor {
                      void  sound.play();
                     cookiePlate.graphics.use(Sprites.CookiePlateEmpty()); // Use preloaded sprite
                     cookiePlate.changedImage = true; // Set the flag to true
+                    this.cookieCounter += 1;
                 }
             }
+        }
+            if(this.mugCounter < 1){
             if(this.isHoveringMug){
                 const mug = engine.currentScene.actors.find(actor => actor instanceof MugActor) as MugActor;
                 if (mug) {
@@ -65,8 +71,10 @@ export class GloveActor extends ex.Actor {
                      void sound.play();
                     mug.graphics.use(Sprites.MugEmpty()); // Use preloaded sprite
                     mug.changedImage = true; // Set the flag to true
+                    this.mugCounter += 1;
                 }
             }
+        }
         });
     }
 
@@ -78,11 +86,15 @@ export class GloveActor extends ex.Actor {
             this.graphics.use(Sprites.GloveActive()); // Use preloaded sprite
             this.isHoveringFolder = true;
         }else if(other.owner instanceof CookiePlateActor){
+            if(this.cookieCounter < 1){
             this.graphics.use(Sprites.GloveActive()); // Use preloaded sprite
             this.isHoveringCookiePlate = true;
+            }
         }else if(other.owner instanceof MugActor){
+            if(this.mugCounter < 1){
             this.graphics.use(Sprites.GloveActive()); // Use preloaded sprite
             this.isHoveringMug = true;
+            }
         }else{
             this.graphics.use(Sprites.Glove()); 
             this.isHoveringMouse = false

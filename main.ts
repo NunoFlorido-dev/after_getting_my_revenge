@@ -3,7 +3,7 @@ import { loader } from './assets/resources';
 import { MainScene } from './assets/scenes/main_scene';
 import { PCScene } from './assets/scenes/pc_scene'; 
 import { CreditsScene } from './assets/scenes/credits_scene';
-
+import { Howl } from 'howler';
 
 
 // Create a game engine with basic settings
@@ -37,12 +37,18 @@ game.on('start', () => {
 });
 
 const exit_note = document.getElementById("exit_note");
+const playMusic = document.getElementById("play_music");
 const exit_note_credits = document.getElementById("exit_note_credits");
 const canvas = document.querySelector('canvas');
 
 if (exit_note) {
   document.body.prepend(exit_note);
   exit_note.style.zIndex = "20";
+}
+
+if (playMusic) {
+  document.body.prepend(playMusic);
+  playMusic.style.zIndex = "20";
 }
 
 if (exit_note_credits) {
@@ -78,9 +84,14 @@ if(game.currentSceneName === "pcscene"){
       game.goToScene("mainscene");
     })
   }
+
  }else{
   if(exit_note){
   exit_note.style.display = 'none';
+  }
+
+  if(playMusic){
+    playMusic.style.display = 'none';
   }
 
   if(exit_note_credits){

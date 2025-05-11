@@ -1,3 +1,6 @@
+import { Howl } from "howler";
+
+let musicButton = document.getElementById("play_music");
 let iconArea = document.querySelector(".mainwindow_iconarea");
 
 let cheeseNotesPage = document.querySelector(".mainwindow_cheesenotes");
@@ -25,6 +28,26 @@ let feathersMessages = document.querySelector(".feathers_messages");
 let feathersLeaveIcon = document.querySelector(".feathers_leave");
 
 let wererabbitButton = document.getElementById("wererabbit_minigame");
+
+// MUSIC //
+let activateMusic = false;
+let music = new Howl({
+  src: ["/sounds/main_music.mp3"],
+  loop: true,
+  volume: 0.5,
+});
+musicButton.addEventListener("click", () => {
+  activateMusic = !activateMusic;
+  if (activateMusic) {
+    music.play();
+    musicButton.textContent = "Stop Music";
+    musicButton.style.backgroundColor = "#ff3d44";
+  } else {
+    music.stop();
+    musicButton.textContent = "Play Music!";
+    musicButton.style.backgroundColor = "#ffec42";
+  }
+});
 
 // DISPLAY NORBOT /////
 

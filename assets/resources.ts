@@ -15,12 +15,15 @@ export const Resources = {
     Desk: new ex.ImageSource('/images/mesa.png'),
     ExitNote: new ex.ImageSource('/images/nota_exit.png'),
     Mug: new ex.ImageSource('/images/caneca_cheio.png'),
+    MugEmpty: new ex.ImageSource('/images/caneca_vazia.png'),
     Wererabbit: new ex.ImageSource('/images/wererabbit.png'),
     WererabbitJump: new ex.ImageSource('/images/wererabbit.png'),
     WererabbitSlide: new ex.ImageSource('/images/wererabbit.png'),
     Vegetable: new ex.ImageSource('/images/vegetable.png'),
     FolderOpen: new ex.ImageSource('/images/pasta_creditos.png'),
     FolderClosed: new ex.ImageSource('/images/pasta_fechada.png'),
+    CookiePlate: new ex.ImageSource('/images/prato_bolachas.png'),
+    CookiePlateEmpty: new ex.ImageSource('/images/prato_migalhas.png'),
   };
   
 

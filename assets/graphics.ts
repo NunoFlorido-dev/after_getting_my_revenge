@@ -15,10 +15,13 @@ export const Sprites = {
   Desk: () => new ex.Sprite({ image: Resources.Desk}),
   ExitNote: () => new ex.Sprite({ image: Resources.ExitNote }),
   Mug: () => new ex.Sprite({ image: Resources.Mug}),
+  MugEmpty: () => new ex.Sprite({ image: Resources.MugEmpty }),
   Wererabbit: () => new ex.Sprite({ image: Resources.Wererabbit }),
   WererabbitJump: () => new ex.Sprite({ image: Resources.WererabbitJump }),
   WererabbitSlide: () => new ex.Sprite({ image: Resources.WererabbitSlide }),
   Vegetable: () => new ex.Sprite({ image: Resources.Vegetable }),
   FolderOpen: () => new ex.Sprite({ image: Resources.FolderOpen }),
   FolderClosed: () => new ex.Sprite({ image: Resources.FolderClosed }),
+  CookiePlate: () => new ex.Sprite({ image: Resources.CookiePlate }),
+  CookiePlateEmpty: () => new ex.Sprite({ image: Resources.CookiePlateEmpty }),
 };

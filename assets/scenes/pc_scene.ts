@@ -2,9 +2,9 @@ import * as ex from 'excalibur';
 import { MonitorActor } from '../actors/monitor';
 
 
+
 export class PCScene extends ex.Scene {
     private isActive = false;
-
 
     onInitialize(engine: ex.Engine) {
         let centerScreenX = engine.drawWidth / 2;
@@ -29,12 +29,17 @@ this.add(monitorOut);
 
     onActivate(_context: ex.SceneActivationContext) {
         const pcUI = document.getElementById('desktop');
+        const playMusicButton = document.getElementById('play_music');
         const canvas = this.engine.canvas;
 
         if (pcUI) {
             pcUI.style.display = 'block'; // Show the pcUI
             canvas.style.pointerEvents = 'none'
           }
+
+          if(playMusicButton){
+            playMusicButton.style.display = 'block'; // Show the play music button
+        }
 
 
         this.engine.canvas.style.cursor = 'default';

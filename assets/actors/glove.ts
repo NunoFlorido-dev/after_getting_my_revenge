@@ -45,6 +45,10 @@ export class GloveActor extends ex.Actor {
             }
 
             if(this.isHoveringFolder){
+                let sound = new Howl({
+                    src: ['/sounds/paper.mp3']
+                  });
+                void sound.play();
                 engine.goToScene('credits'); // Transition to the new scene
             }
             if(this.cookieCounter < 1){

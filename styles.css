@@ -818,6 +818,10 @@ cursor: pointer;
 
 #credits{
   display: none;
+}
+
+#credits .credits_text{
+  display: flex;
   position: absolute;
   background-color: white;
   width: 35%;
@@ -833,6 +837,7 @@ cursor: pointer;
   text-align: center;
   line-height: 1.5rem;
   font-family: "Illusion Book", sans-serif;
+  z-index: 2;
 }
 
 #exit_note_credits{
@@ -845,6 +850,15 @@ cursor: pointer;
 
 #exit_note_credits:hover{
   cursor: pointer;
+}
+
+#folder_credits{
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+  width: 45rem;
+  z-index: 1;
 }
 
 #chat_note{
